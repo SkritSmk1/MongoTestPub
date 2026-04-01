@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // The uri string must be the connection string for the database (obtained on Atlas).
-const uri = "mongodb+srv://<user>:<password>@ckmdb.5oxvqja.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://skritsimkhada_db_user:Respectskrit1%21@cluster0.vzo2oyd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 // Make sure the package.json contains:
 //   "dependencies": {
 //    "express": "^4.18.2",
@@ -53,6 +53,7 @@ console.log("Looking for: " + searchKey);
 
 async function run() {
   try {
+     await client.connect(); 
     const database = client.db('ckmdb');
     const parts = database.collection('cmps415');
 
